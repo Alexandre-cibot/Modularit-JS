@@ -31,3 +31,63 @@ Javascript ne supportant pas nativement les modules, la communauté s’est char
 
 Exemple de syntaxe CommonJS: 
 
+
+
+```js
+  var a = require('moduleA');
+  var b = require('moduleB');
+  // j'utilise a et b
+  module.exports = maFonctionTresUtile;
+```
+
+* AMD (Asynchronous Module Definition) : Implémenté dans RequireJS, caractérisé par :
+
+ * Une syntaxe légèrement plus complexe
+
+ * Un design adapté au chargement asynchrone
+
+Exemple de syntaxe AMD:
+
+```js
+define(['moduleA', 'moduleB'], function(a, b) {
+ // j'utilise a et b
+ return maFonctionTresUtile;
+});
+```
+
+L’objectif d’ES6 est donc de combiner les avantages de ces deux standards
+
+* Comme dans CommonJS, possède une syntaxe compacte et supporte les dépendances cycliques
+
+* Comme dans AMD, supporte le fonctionnement asynchrone
+
+ES6 possède aussi l’avantage d’être compatible avec CommonJS, ainsi, il est possible avec ES6 d’importer un module CommonJS sans risque.
+
+* Partager ses modules avec la communauté :
+
+### Node Package Manager (NPM): 
+
+Travailler en module offre un autre avantage, et des moindre.
+
+En effet, grâce à des “Package Manager” il est possible de rendre disponible à la communauté ses propres module (aussi appelés packages). 
+
+Il est possible d’utiliser au sein de ses projets des modules développé et maintenue par d’autre développeur. 
+
+Cela sans rien débourser, les joies du Open Source !
+
+### Conclusion
+
+Tant que les autres navigateurs n’intègrent pas la gestion de modules nativement, il faudra passer par ces solutions de model-builder.
+
+Sources:
+
+<https://ponyfoo.com/articles/es6-modules-in-depth>
+
+<https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/import>
+
+<http://2ality.com/2014/09/es6-modules-final.html>
+
+<https://jakearchibald.com/2017/es-modules-in-browsers>
+
+
+
